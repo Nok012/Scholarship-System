@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { StudentInterface } from "../interfaces/IStudent";
 import Typography from '@mui/material/Typography';
-import {  Box, Container, CssBaseline, Snackbar, Stack } from '@mui/material';
+import { Box, Container, CssBaseline, Snackbar, Stack } from '@mui/material';
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
 import {
@@ -32,7 +32,7 @@ function Student() {
     };
 
     const navigator = useNavigate()
-    if ((student?.Money == 0)) {
+    if ((student?.Money === 0)) {
         setTimeout(() => {
             navigator("/StudentCreate")
         }, 2000);
@@ -70,32 +70,28 @@ function Student() {
                     <Typography>ปีการศึกษา:  {student?.Year?.Number}</Typography>
                     <Typography>อาจารย์ที่ปรึกษา:  {student?.Advisor?.ThaiName}</Typography>
                 </Stack>
+                
             </div>
         )
     }
 
-
-    const test = () => {
-        console.log(student?.User?.Email)
-    }
-
     return (
         <div>
-            <Container     component="main"
-                   maxWidth="md"
-                   sx={{ mt:5, 
-                         mb:2,
-                         p:2, 
-                         boxShadow: 3,
-                         bgcolor: '#E3E3E3'
-                        }}>
-            <CssBaseline />
-                <Box  sx={{p:0, m:0, mb:5 }}>
-                    
-                    <Typography variant="h5" color="secondary" sx={{fontWeight: 'bold'}}> ประวัตินักศึกษา </Typography>            
-                
-                </Box>     
-                {(student?.Money == 0) ? alertFunction() : UI()}
+            <Container component="main"
+                maxWidth="md"
+                sx={{
+                    mt: 5,
+                    mb: 2,
+                    p: 2,
+                    boxShadow: 3,
+                    bgcolor: '#E3E3E3'
+                }}>
+                <CssBaseline />
+                <Box sx={{ p: 0, m: 0, mb: 5 }}>
+                    <Typography variant="h5" color="secondary" sx={{ fontWeight: 'bold' }}> ประวัตินักศึกษา </Typography>
+                </Box>
+
+                {(student?.Money === 0) ? alertFunction() : UI()}
             </Container>
 
         </div>

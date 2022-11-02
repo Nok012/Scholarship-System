@@ -49,7 +49,6 @@ function ReportCreate() {
     if (res) {
       setStudent(res);
       localStorage.setItem("sid", res.ID)
-      console.log(res);
     }
   };
 
@@ -57,8 +56,6 @@ function ReportCreate() {
     let res = await GetScholarships();
     if (res) {
       setScholarships(res);
-      console.log(res);
-
     }
   };
 
@@ -66,17 +63,14 @@ function ReportCreate() {
     let res = await GetReason();
     if (res) {
       setReasons(res);
-      console.log(res);
     }
   };
 
 
   useEffect(() => {
-
     getStudent();
     getScholarships();
     getReasons();
-
   }, [])
 
   const [success, setSuccess] = React.useState(false);
@@ -92,7 +86,6 @@ function ReportCreate() {
     setSuccess(false);
     setError(false);
   };
-  //report
 
   const handleChange = (event: SelectChangeEvent) => {
     const name = event.target.name as keyof typeof report;

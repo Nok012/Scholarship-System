@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div>
-       {(role == "นักศึกษา") ? <AppBarStudent/>: <AppBarAdmin/>}          
+       {(role === "นักศึกษา") ? <AppBarStudent/>: <AppBarAdmin/>}          
     </div>
   );
 }

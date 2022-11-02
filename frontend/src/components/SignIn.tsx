@@ -122,6 +122,7 @@ function SignIn() {
               alignSelf: "center",
             }}
           >
+            
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
               <LockOutlinedIcon />
             </Avatar>
@@ -139,7 +140,7 @@ function SignIn() {
                   label="Role *"
                   onChange={handleChange}
                 >
-                  <MenuItem value={"เจ้าน้าที่"}>เจ้าน้าที่</MenuItem>
+                  <MenuItem value={"เจ้าหน้าที่"}>ผู้ดูแลระบบ</MenuItem>
                   <MenuItem value={"นักศึกษา"}>นักศึกษา</MenuItem>
                 </Select>
               </FormControl>
@@ -181,7 +182,9 @@ function SignIn() {
               >
                 Sign In
               </Button>
-
+                <div className="grid">
+              <img src="logo.png" />
+                </div>
             </Box>
           </Box>
         </Grid>

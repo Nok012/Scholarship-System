@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import TextField from '@mui/material/TextField';
@@ -125,7 +124,6 @@ export default function StudentCreate() {
         };
 
         async function submit() {
-                console.log(user?.ID);
                 let data = {
                         YearID: convertType(student.YearID),
                         FacultyID: convertType(student.FacultyID),
@@ -137,7 +135,6 @@ export default function StudentCreate() {
                         Gpax: typeof student.Gpax == "string" ? parseFloat(student.Gpax) : 0.0,
                         Money: typeof student.Money == "string" ? parseInt(student.Money) : 0,
                 };
-                console.log(data)
                 let res = await CreatStudents(data);
                 if (res) {
                         setSuccess(true);
@@ -148,10 +145,7 @@ export default function StudentCreate() {
 
 
         return (
-
                 <div>
-
-
                         <Container component="main"
                                 maxWidth="xl"
                                 sx={{
@@ -183,18 +177,21 @@ export default function StudentCreate() {
                                         </Alert>
                                 </Snackbar>
 
+                        
 
-                                <Box sx={{ p: 0, m: 0, mb: 5 }}>
-
-                                        <Typography variant="h5" color="secondary" sx={{ fontWeight: 'bold' }}> ลงทะเบียนข้อมูลนักศึกษา </Typography>
-
-                                </Box>
-
-                                <Grid container spacing={2} >
-
-
+                                <Stack 
+                                        sx={{ p: 0, m: 0, mb: 5 }} 
+                                >
+                                        <Typography 
+                                                variant="h5" 
+                                                color="secondary" 
+                                                sx={{ fontWeight: 'bold' }}
+                                        > 
+                                                ลงทะเบียนข้อมูลนักศึกษา 
+                                        </Typography>                                      
+                                </Stack>
+                                  <Grid container spacing={2} >
                                         <Grid xs={6}>
-
                                                 <Typography className='StyledTypography'> ชื่อ - นามสกุล </Typography>
                                                 <TextField className='StyledTextField'
                                                         id="Name"
@@ -207,11 +204,8 @@ export default function StudentCreate() {
                                                                 name: "Name",
                                                         }}
                                                 />
-
                                         </Grid>
-
                                         <Grid xs={6}>
-
                                                 <Typography className='StyledTypography'> Gmail </Typography>
                                                 <TextField className='StyledTextField'                                    
                                                         id="Gpax"
@@ -223,9 +217,7 @@ export default function StudentCreate() {
                                                         disabled
                                                 />
                                         </Grid>
-
                                         <Grid xs={6}>
-
                                                 <Typography className='StyledTypography'> รายได้ผู้ปกครองต่อ/ปี </Typography>
                                                 <TextField className='StyledTextField'
                                                         id="Name"
@@ -240,9 +232,7 @@ export default function StudentCreate() {
                                                 />
 
                                         </Grid>
-
                                         <Grid xs={6}>
-
                                                 <Typography className='StyledTypography'> เบอร์โทร </Typography>
                                                 <TextField className='StyledTextField'
                                                         id="Name"
@@ -255,9 +245,7 @@ export default function StudentCreate() {
                                                                 name: "Phon",
                                                         }}
                                                 />
-
                                         </Grid>
-
                                         <Grid xs={6}>
 
                                                 <Typography className='StyledTypography'> GPAX </Typography>
@@ -272,11 +260,8 @@ export default function StudentCreate() {
                                                                 name: "Gpax",
                                                         }}
                                                 />
-
                                         </Grid>
-
                                         <Grid xs={6}>
-
                                                 <FormControl fullWidth variant="outlined">
                                                         <Typography className='StyledTypography'> สำนักวิชา </Typography>
                                                         <Select
@@ -302,9 +287,7 @@ export default function StudentCreate() {
                                                 </FormControl>
 
                                         </Grid>
-
                                         <Grid xs={6}>
-
                                                 <FormControl fullWidth variant="outlined">
                                                         <Typography className='StyledTypography'> ปีการศึกษา </Typography>
                                                         <Select
@@ -328,11 +311,8 @@ export default function StudentCreate() {
                                                                 ))}
                                                         </Select>
                                                 </FormControl>
-
                                         </Grid>
-
                                         <Grid xs={6}>
-
                                                 <FormControl fullWidth variant="outlined">
                                                         <Typography className='StyledTypography'> อาจารย์ที่ปรึกษา </Typography>
                                                         <Select
@@ -356,11 +336,8 @@ export default function StudentCreate() {
                                                                 ))}
                                                         </Select>
                                                 </FormControl>
-
                                         </Grid>
-
                                         <Grid xs={6}>
-
                                                 <Typography className='StyledTypography'> รหัสประจำตัวประชาชน </Typography>
                                                 <TextField className='StyledTextField'
                                                         id="Name"
@@ -373,12 +350,8 @@ export default function StudentCreate() {
                                                                 name: "Personalid",
                                                         }}
                                                 />
-
                                         </Grid>
                                 </Grid>
-
-
-
                                 <Stack
                                         spacing={2}
                                         direction="row"
@@ -387,15 +360,19 @@ export default function StudentCreate() {
                                         sx={{ mt: 3 }}
                                 >
 
-                                        <Button variant="contained" color="secondary" component={RouterLink} to="/" > ถอยกลับ </Button>
+                                        <Button 
+                                                variant="contained" 
+                                                color="secondary" 
+                                                component={RouterLink} 
+                                                to="/" 
+                                        > 
+                                                ถอยกลับ
+                                        </Button>
 
                                         <Button variant="contained" color="secondary" onClick={submit}> บันทึกข้อมูล </Button>
 
                                 </Stack>
-
-
                         </Container>
-
                 </div>
         )
 }

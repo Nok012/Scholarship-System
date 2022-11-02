@@ -226,16 +226,16 @@ func SetupDatabase() {
 
 	//ระบบผู้ให้ทุน------------------------------------------------------------------------------
 	var TypeFunds = []TypeFund{
-		{TypeFund: "aum"},
-		{TypeFund: "sum"},
-		{TypeFund: "bim"},
+		{TypeFund: "ทุนค่าอาหาร"},
+		{TypeFund: "ทุนสนับสนุนขาดแคลทุนทรัพย์"},
+		{TypeFund: "ทุนอาหารกลางวัน"},
 	}
 	db.CreateInBatches(TypeFunds, 3)
 
 	var Organizations = []Organization{
-		{Organization: "a"},
-		{Organization: "b"},
-		{Organization: "c"},
+		{Organization: "บริษัทเอกชน"},
+		{Organization: "กลุ่ม"},
+		{Organization: "รัฐวิสาหกิจ"},
 	}
 	db.CreateInBatches(Organizations, 3)
 

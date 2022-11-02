@@ -88,7 +88,6 @@ function SliplistCreate() {
     console.log(res);
     if (res) {
       setAdmin(res);
-      console.log(admin);
     }
   };
 
@@ -103,7 +102,6 @@ function SliplistCreate() {
     let res = await GetStudentList();
     if (res) {
       setStudentlists(res);
-      console.log(res);
     }
   };
 
@@ -112,7 +110,6 @@ function SliplistCreate() {
     let res = await GetReports();
     if (res) {
       setReports(res);
-      console.log(res);
     }
   };
 

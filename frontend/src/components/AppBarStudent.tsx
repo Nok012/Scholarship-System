@@ -35,7 +35,6 @@ import Home from "./HomeUser";
 import ReportCreate from "./ReportCreate";
 import Report from "./Report";
 
-import { StudentInterface } from "../interfaces/IStudent";
 import { GetStudentByUID } from "../services/HttpClientServiceUser";
 
 const drawerWidth = 240;
@@ -120,11 +119,9 @@ function AppBarStudent() {
     window.location.href = "/";
   };
 
-  const [student, setStudent] = useState<StudentInterface>();
   const getStudentByUid = async () => {
     let res = await GetStudentByUID();   
     if (res) {
-      setStudent(res);
       localStorage.setItem("sid", res.ID)
     }
   };

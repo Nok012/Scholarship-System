@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -31,12 +31,8 @@ import HomeAdmin from "./HomeAdmin";
 import SliplistCreate from "./SliplistCreate";
 import Sliplist from "./Sliplist";
 
-
-
 import StudentListCreate from "./StudentListCreate";
-
 import ScholarshipCreate from "./ScholarshipCreate";
-
 import DonatorCreate from "./DonatorCreate";
 
 const drawerWidth = 340;

@@ -1,6 +1,5 @@
-import { Container, Typography } from '@mui/material'
 import React from 'react'
-
+import { Container, Typography } from '@mui/material'
 
 function Home() {
   return (

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -10,7 +9,6 @@ import { DataGrid, GridColDef} from '@mui/x-data-grid';
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
-
 
 import { ScholarStatusesInterface } from "../interfaces/IScholarStatus";
 import { ScholarTypesInterface } from "../interfaces/IScholarType";
@@ -29,7 +27,6 @@ import {
 function ScholarshipCreate() {
 
     const [scholarships, setScholarships] = useState<ScholarshipInterface[]>([]);
-
 
     const getScholarships = async () => {
         let res = await GetScholarships();

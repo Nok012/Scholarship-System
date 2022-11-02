@@ -15,11 +15,9 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
-
 import { ReportInterface } from "../interfaces/IReport";
 import { StatusInterface } from "../interfaces/IStatus";
 import { StudentListInterface } from "../interfaces/IStudentlist";
-
 
 import {
   GetReports,
@@ -67,7 +65,6 @@ function StudentListCreate() {
     let res = await GetReports();
     if (res) {
       setReports(res);
-      console.log(res);
     }
   };
 
@@ -75,7 +72,6 @@ function StudentListCreate() {
     let res = await GetStatus();
     if (res) {
       setStatuses(res);
-      console.log(statuses);
     }
   };
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { SigninInterface } from "../interfaces/ISignin";
 import { StudentInterface } from "../interfaces/IStudent";
 import { UsersInterface } from "../interfaces/IUser";
@@ -188,8 +187,7 @@ async function CreatStudents(data: StudentInterface) {
   let res = await fetch(`${apiUrl}/students`, requestOptions)
     .then((response) => response.json())
     .then((res) => {
-      if (res.data) {
-        
+      if (res.data) {        
         return res.data;
       } else {
         return false;
@@ -198,6 +196,7 @@ async function CreatStudents(data: StudentInterface) {
 
   return res;
 }
+
 
 async function GetScholarships() {
   const requestOptions = {

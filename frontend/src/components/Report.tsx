@@ -7,7 +7,6 @@ import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 import { ReportInterface } from "../interfaces/IReport";
-import { StudentInterface } from "../interfaces/IStudent";
 
 import { 
   GetStudentByUID, 
@@ -16,13 +15,11 @@ import {
 
 function Report() {
   const [reports, setReports] = useState<ReportInterface[]>([]);
-  const [student, setStudent] = useState<StudentInterface>();
 
 
   const getStudentByUid = async () => {
     let res = await GetStudentByUID();   
     if (res) {
-      setStudent(res);
       localStorage.setItem("sid", res.ID)
     }
   };
@@ -33,10 +30,6 @@ function Report() {
       setReports(res);
     }
   };
-
-  const testClink = () => {
-    console.log(reports)
-}
 
   useEffect(() => {
 
@@ -59,7 +52,7 @@ function Report() {
       field: "Scholarship",
       headerName: "ทุนการศึกษา",
       width: 150,
-      valueFormatter: (params) => params.value.Scholarship_Name,
+      valueFormatter: (params) => params.value.ScholarName,
     },
     {
       field: "Reason",

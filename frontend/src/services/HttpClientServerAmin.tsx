@@ -1,13 +1,8 @@
-import React from "react";
 import { SigninInterface } from "../interfaces/ISignin";
 import { AdminsInterface } from "../interfaces/IAdmin";
 import { SliplistInterface } from "../interfaces/ISliplist";
-
 import { StudentListInterface } from "../interfaces/IStudentlist";
 import { ScholarshipInterface } from "../interfaces/IScholarship";
-
-import { TypeFundInterface } from "../interfaces/ITypeFund";
-import { OrganizationInterface } from "../interfaces/IOrganization";
 import { DonatorInterface } from "../interfaces/IDonator";
 
 const apiUrl = "http://localhost:8080";
@@ -128,7 +123,6 @@ async function GetPaymentStatus() {
 }
 
 async function GetStudentLists() {
-  let uid = localStorage.getItem("uid");
   const requestOptions = {
     method: "GET",
     headers: {
